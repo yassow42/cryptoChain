@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Transaction from "./Transaction";
 import history from "../history";
 
-const POOL_INTERVAL_MS = 10000;
+const POOL_INTERVAL_MS = 11000;
 
 class TransactionPool extends Component {
     state = { transactionPoolMap: {} };
@@ -15,7 +15,6 @@ class TransactionPool extends Component {
             .then(json => {
                 this.setState({ transactionPoolMap: json })
             });
-
     }
     fetchMineTransactions = () => {
         fetch(`${document.location.origin}/api/mine-transactions`)
