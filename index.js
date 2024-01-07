@@ -52,7 +52,6 @@ app.post('/api/transact', (req, res) => {
     // console.error("transactionsssssssss  -------------------------------------", wallet.publicKey);
     try {
         if (transaction) {
-
             transaction.update({ senderWallet: wallet, recipient: recipient, amount: amount });
         } else {
 
