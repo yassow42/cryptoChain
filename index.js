@@ -46,10 +46,14 @@ app.post('/api/mine', (req, res) => {
     res.redirect('/api/blocks');
 });
 
+
+
 app.post('/api/transact', (req, res) => {
     const { amount, recipient } = req.body;
     let transaction = transactionPool.existingTransaction({ inputAddress: wallet.publicKey });
-    // console.error("transactionsssssssss  -------------------------------------", wallet.publicKey);
+   
+   
+    console.error("transactionsssssssss  -------------------------------------", wallet.publicKey);
     try {
         if (transaction) {
             transaction.update({ senderWallet: wallet, recipient: recipient, amount: amount });
